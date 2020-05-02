@@ -13,7 +13,7 @@ class HomePage extends StatefulWidget {
 
 
 class _HomePageState extends State<HomePage> {
-  Color color = Colors.green;
+  Color color = Colors.blue;
   var gasCtrl = new MoneyMaskedTextController();
   var alcCtrl = new MoneyMaskedTextController();
   var busy = false;
@@ -36,11 +36,12 @@ class _HomePageState extends State<HomePage> {
           :         
           SubmitForm(alcCtrl: alcCtrl, gasCtrl: gasCtrl,
           submitFunc: calculate,
-          busy: false),
+          busy: busy),
           
           
         ],
       ),
+    ),
     );
   }
 
@@ -52,7 +53,7 @@ class _HomePageState extends State<HomePage> {
     double res = alc / gas;
 
     setState(() {
-      color = Colors.deepPurpleAccent;
+      color = Colors.lightBlue;
       completed = false;
       busy = true;
     });
@@ -75,7 +76,7 @@ class _HomePageState extends State<HomePage> {
 
   reset() {
     setState(() {
-      color = Colors.deepPurple;
+      color = Colors.blue;
       alcCtrl = new MoneyMaskedTextController();
       gasCtrl = new MoneyMaskedTextController();
       completed = false;
